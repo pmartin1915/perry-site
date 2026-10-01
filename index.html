@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Perry Martin, DNP, MSN, RN</title>
+<meta name="description" content="DNP-prepared nurse and self-taught software engineer. Medical imaging measurement tools, clinical software, and nursing scholarship.">
+
+<!--
+  THIS FILE IS THE CONTENT. Read this before changing anything.
+
+  Every word a visitor reads lives here, as ordinary semantic HTML. With
+  JavaScript disabled this page is a complete, scannable, conventional
+  portfolio. viewer.js UPGRADES this DOM into the imaging viewer; it must never
+  be the thing that supplies the words. If you find yourself writing prose into
+  a JS file, stop: you have broken the one requirement the spec calls
+  "not optional" (SPEC.md section 3).
+
+  Depth variants are sibling <p> elements carrying data-depth. The `hidden`
+  attribute on depths 1 and 3 is deliberate and load-bearing: it works with no
+  CSS and no JS, so the no-JS reader gets exactly depth 2, which is the required
+  tier. viewer.js toggles `hidden` to change depth.
+
+  Structure, metadata, and rail order live in projects.js, keyed by the id on
+  each <section>. That file holds NO prose.
+
+  This file is deployed, so its COMMENTS are public too. Keep maintainer notes
+  here limited to how the file works. Anything about what is not in it, and why,
+  belongs in SPEC.md section 5, which is not served.
+
+  Every factual claim here has a row in CLAIMS.md. House style: no em-dashes,
+  no en-dashes.
+-->
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<a class="skip" href="#content">Skip to content</a>
+
+<header class="identity">
+  <h1>Perry Martin<span class="creds">, DNP, MSN, RN</span></h1>
+  <p class="tagline">DNP-prepared nurse. I build clinical measurement tools.</p>
+
+  <!--
+    Visible at every depth and in the document view. Never gated behind the viewer.
+  -->
+  <p class="actions">CV and resume available on request.</p>
+
+  <!--
+    Public contact only. No phone number, no mailing address.
+    LinkedIn is intentionally absent until the URL is known: an unresolved link
+    is worse than no link.
+  -->
+  <ul class="contact">
+    <li><a href="mailto:perry@martinapps.dev">perry@martinapps.dev</a></li>
+    <li><a href="https://github.com/pmartin1915">GitHub</a></li>
+  </ul>
+</header>
+
+<main id="content">
+
+<section class="intro" aria-labelledby="intro-h">
+  <h2 id="intro-h">Who I am</h2>
+  <p>
+    I am a DNP-prepared nurse and a self-taught software engineer. Three and a half years of
+    pediatric critical care and burn nursing at Children's of Alabama showed me how much clinical
+    work runs on tools that do not exist yet, so I started building them. Now most of my attention is
+    on medical imaging: measuring pediatric brain tumors the same way every time, so the decision to
+    treat a child rests on something steadier than a hand-drawn line.
+  </p>
+</section>
+
+
+<!-- ===== order 2. OPG Scoping Review ==================================== -->
+<section class="series" id="scoping-review" aria-labelledby="scoping-review-h">
+  <h2 id="scoping-review-h">Volumetric Measurement Methods for Pediatric OPG: A Scoping Review</h2>
+
+  <dl class="meta">
+    <dt>Role</dt><dd>Sole author</dd>
+    <dt>Dates</dt><dd>January 2026 to present</dd>
+    <dt>Method</dt><dd>PRISMA-ScR</dd>
+    <dt>Status</dt><dd>In revision for submission</dd>
+  </dl>
+
+  <article class="slice">
+    <h3>The question</h3>
+    <p data-depth="2">
+      Before building a measurement tool, I wanted to know what the field already does. How is the
+      size of an optic pathway glioma actually measured in the published literature, how much of that
+      work is volumetric rather than two-dimensional, and how often does anyone check whether two
+      readers measuring the same tumor agree?
+    </p>
+  </article>
+
+  <article class="slice">
+    <h3>What I did</h3>
+    <p data-depth="2">
+      A scoping review of 28 studies published between 2008 and 2025, sole author, following
+      PRISMA-ScR. I characterized how each study measured tumor size and whether it reported
+      reliability. Five of the 28, about 18 percent, reported inter-rater or intra-rater reliability
+      at all.
+    </p>
+  </article>
+
+  <article class="slice">
+    <h3>Method</h3>
+    <p data-depth="2">
+      PRISMA-ScR protocol across PubMed, Embase, Cochrane, Web of Science, and IEEE Xplore. Studies
+      were sorted into manual, semi-automated, fully automated, and approximation-formula measurement
+      categories, then charted for reliability reporting, imaging sequences used, and how growth was
+      defined.
+    </p>
+  </article>
+
+  <article class="slice">
+    <h3>Where it stands</h3>
+    <p data-depth="2">
+      In revision for submission. The finding that most of this literature does not report
+      measurement agreement is the gap the segmentation study was designed around, which is why these
+      two sit next to each other.
+    </p>
+  </article>
+</section>
+
+
+<!-- ===== order 3. Burn Wizard =========================================== -->
+<section class="series" id="burn-wizard" aria-labelledby="burn-wizard-h">
+  <h2 id="burn-wizard-h">Burn Wizard</h2>
+
+  <dl class="meta">
+    <dt>Role</dt><dd>Sole developer</dd>
+    <dt>Dates</dt><dd>2024 to present</dd>
+    <dt>Stack</dt><dd>React, TypeScript, Vite, Tauri</dd>
+    <dt>Status</dt><dd>Live on the App Store and web</dd>
+  </dl>
+
+  <article class="slice">
+    <h3>The problem</h3>
+    <p data-depth="1" hidden>
+      When a child is badly burned, two numbers shape the first day of care: how much of the body is
+      burned, and how much fluid that child needs. Both get worked out by hand, quickly, often in the
+      middle of the night.
+    </p>
+    <p data-depth="2">
+      Burn resuscitation runs on two calculations made under pressure: what percentage of the body is
+      burned, and how much fluid that child needs in the first 24 hours. Get the surface area wrong
+      and the fluid volume is wrong with it. Nurses learn this from a paper chart.
+    </p>
+    <p data-depth="3" hidden>
+      Total body surface area feeds the Parkland formula directly, so surface area error propagates
+      linearly into fluid volume. Pediatric body proportions differ from adult ones and shift with
+      age, which is why the rule of nines fails in children and Lund-Browder exists. The chart is
+      static paper and the arithmetic is done under time pressure.
+    </p>
+  </article>
+
+  <article class="slice">
+    <h3>What I built</h3>
+    <p data-depth="1" hidden>
+      A burn assessment trainer for phones. You map the burn on a body diagram, it does the math, and
+      it explains what it did. English or Spanish, and it works with no signal.
+    </p>
+    <p data-depth="2">
+      A trainer that walks through Lund-Browder surface area mapping and Parkland fluid calculation,
+      then checks the result against burn center referral criteria. It runs offline on a phone, in
+      English or Spanish, with an eight-chapter teaching curriculum in both languages.
+    </p>
+    <p data-depth="3" hidden>
+      Offline-first progressive web app covering age-adjusted Lund-Browder mapping, Parkland
+      calculation, burn center referral criteria, and an eight-chapter curriculum, fully localized to
+      Latin American Spanish (es-419) across both interface and teaching content. Shipped as a PWA on
+      the web and wrapped for iOS.
+    </p>
+  </article>
+
+  <article class="slice">
+    <h3>How it works</h3>
+    <p data-depth="1" hidden>
+      Age-adjusted body maps handle the surface area math, and the app shows its work at every step
+      instead of just handing back a number.
+    </p>
+    <p data-depth="2">
+      An offline-first progressive web app, wrapped for iOS. Age-adjusted Lund-Browder tables drive
+      the surface area math, and a teaching engine explains each step rather than returning a bare
+      number. More than 1,700 automated tests cover the calculation paths.
+    </p>
+    <p data-depth="3" hidden>
+      React 19 and TypeScript on Vite, Tailwind for styling, Zustand for state, Workbox for the
+      service worker, Tauri 2 for the iOS and desktop wrappers. Locally stored session data is
+      encrypted at rest with AES-256-GCM. More than 1,700 automated tests under Vitest and Playwright,
+      weighted toward the calculation paths, because a wrong fluid rate is the kind of error that
+      matters.
+    </p>
+  </article>
+
+  <article class="slice">
+    <h3>Where it stands</h3>
+    <p data-depth="1" hidden>
+      On the App Store since March 2026, and free on the web.
+    </p>
+    <p data-depth="2">
+      Live on the App Store since March 2026 and on the web; the current version is 1.5.1. It
+      is labeled an educational tool and does not claim to support clinical decisions at the bedside.
+    </p>
+    <p data-depth="3" hidden>
+      Released March 18, 2026; version 1.5.1 August 4, 2026; published under Martin Apps LLC.
+      Educational use only. The app makes no clinical decision support claim and carries that
+      disclaimer in-product, which is a deliberate constraint on what it is allowed to say rather
+      than a legal footnote.
+    </p>
+  </article>
+</section>
+
+
+<!-- ===== order 5. BoardBound ============================================ -->
+<section class="series" id="boardbound" aria-labelledby="boardbound-h">
+  <h2 id="boardbound-h">BoardBound</h2>
+
+  <dl class="meta">
+    <!-- No Dates row: the start year was inferred, not found in any artifact.
+         Restore it once Perry confirms. CLAIMS.md row 11. -->
+    <dt>Role</dt><dd>Sole developer</dd>
+    <dt>Stack</dt><dd>React Native, Expo, Supabase</dd>
+    <dt>Status</dt><dd>Live on the App Store as BoardBound Prep</dd>
+  </dl>
+
+  <article class="slice">
+    <h3>The problem</h3>
+    <p data-depth="2">
+      Board prep question banks tell you an answer was wrong. They rarely tell you why your reasoning
+      was wrong, and the reasoning is the part that decides the next question you miss.
+    </p>
+  </article>
+
+  <article class="slice">
+    <h3>What I built</h3>
+    <p data-depth="2">
+      A nurse practitioner board prep app pairing an adaptive question bank with a conversational
+      tutor you can argue with. It tracks which topics you keep missing, schedules them back on a
+      spaced-repetition interval, and estimates pass probability from your own performance rather
+      than a generic curve.
+    </p>
+  </article>
+
+  <article class="slice">
+    <h3>How it works</h3>
+    <p data-depth="2">
+      React Native on Expo with Supabase behind it, and a large language model driving the tutor. The
+      adaptive engine weights re-drills toward repeated misses, which is the study method I use
+      myself: master the questions, then teach them back.
+    </p>
+  </article>
+
+  <article class="slice">
+    <h3>Where it stands</h3>
+    <p data-depth="2">
+      Live on the App Store as <strong>BoardBound Prep</strong> since June 2026; the current version
+      is 1.0.4.
+    </p>
+  </article>
+</section>
+
+
+<!-- ===== order 6. Wilderness Survival =================================== -->
+<section class="series" id="wilderness" aria-labelledby="wilderness-h">
+  <h2 id="wilderness-h">Wilderness Survival</h2>
+
+  <dl class="meta">
+    <dt>Role</dt><dd>Sole developer</dd>
+    <dt>Dates</dt><dd>2024 to present</dd>
+    <dt>Stack</dt><dd>React, TypeScript, Vite, Tauri</dd>
+    <dt>Status</dt><dd>Live on the App Store</dd>
+  </dl>
+
+  <article class="slice">
+    <h3>The problem</h3>
+    <p data-depth="2">
+      Wilderness reference information is worth the least at exactly the moment you need it most,
+      because that is usually somewhere with no signal.
+    </p>
+  </article>
+
+  <article class="slice">
+    <h3>What I built</h3>
+    <p data-depth="2">
+      An offline-first survival reference drawn from US Army FM 21-76 and federal sources including
+      CDC, EPA, NOAA, and the National Weather Service, with environmental calculators and plant
+      identification. The whole corpus ships inside the app. Nothing in it requires a connection.
+    </p>
+  </article>
+
+  <article class="slice">
+    <h3>How it works</h3>
+    <p data-depth="2">
+      React and TypeScript as a progressive web app, with the reference content stored in IndexedDB
+      behind a Workbox service worker, wrapped for iOS. The content is sourced and attributed rather
+      than written by me, because survival guidance is not a place to improvise.
+    </p>
+  </article>
+
+  <article class="slice">
+    <h3>Where it stands</h3>
+    <p data-depth="2">
+      Live on the App Store as <strong>Wilderness Survival Companion</strong> since March 2026; the
+      current version is 1.8.0.
+    </p>
+  </article>
+</section>
+
+
+<!-- ===== order 7. budget-dispatcher ===================================== -->
+<section class="series" id="budget-dispatcher" aria-labelledby="budget-dispatcher-h">
+  <h2 id="budget-dispatcher-h">budget-dispatcher</h2>
+
+  <dl class="meta">
+    <!-- No Dates row: start year inferred, not in any artifact. No Source link:
+         the repository is private. CLAIMS.md rows 10 and 11. -->
+    <dt>Role</dt><dd>Author</dd>
+    <dt>Stack</dt><dd>Node.js</dd>
+    <dt>Status</dt><dd>In daily use; source private</dd>
+  </dl>
+
+  <article class="slice">
+    <h3>The problem</h3>
+    <p data-depth="2">
+      I had automated coding capacity going unused overnight, and no safe way to point it at real
+      work without risking the parts of my projects that should never change unattended. Clinical
+      calculation code is the obvious example.
+    </p>
+  </article>
+
+  <article class="slice">
+    <h3>What I built</h3>
+    <p data-depth="2">
+      A task runner that turns unused capacity into bounded, reversible, pre-approved
+      work across several projects. Its distinguishing feature is a safety gate: any automated change
+      touching clinical domain logic gets an independent review from a different model family before
+      it can land, and a critical finding reverts the commit rather than warning about it.
+    </p>
+  </article>
+
+  <article class="slice">
+    <h3>How it works</h3>
+    <p data-depth="2">
+      Node.js running a five-phase pipeline on a schedule. Projects are flagged for clinical gating
+      individually, and a flagged project routes any change under its domain or data directories to a
+      cross-family review step. The gate fails closed: a critical finding reverts the commit and logs
+      the outcome.
+    </p>
+  </article>
+
+  <article class="slice">
+    <h3>Where it stands</h3>
+    <p data-depth="2">
+      In daily use across my own projects. The source is private.
+    </p>
+  </article>
+</section>
+
+</main>
+
+<footer>
+  <p>Perry Martin, DNP, MSN, RN. Birmingham, Alabama.</p>
+</footer>
+
+<!--
+  Order matters. projects.js supplies structure and rail order; local.js is
+  OPTIONAL and absent in every deployed copy, so viewer.js must tolerate
+  window.SERIES_GATED being undefined. viewer.js runs last and upgrades the DOM
+  above into the viewer.
+
+  local.js is a local-only data file. It is absent here, and its tag defining
+  nothing is the normal steady state, not an error. The tag stays synchronous and
+  unconditional so there is one render path rather than a deployed path that
+  development never exercises.
+-->
+<script src="projects.js"></script>
+<script src="local.js"></script>
+<script src="viewer.js"></script>
+
+</body>
+</html>
