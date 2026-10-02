@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Burn Wizard | Perry Martin</title>
+<meta name="description" content="Burn Wizard: a burn assessment trainer for Lund-Browder surface area mapping and Parkland fluid calculation. Offline, in English and Spanish.">
+<!--
+  Case-study page (SPEC section 13). Static: no script, the shared stylesheet,
+  every word in this file. Every factual claim has a row in CLAIMS.md.
+  House style: no em-dashes, no en-dashes.
+-->
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body>
+
+<a class="skip" href="#content">Skip to content</a>
+
+<header class="identity">
+  <p class="crumb"><a href="../../">Perry Martin</a><span class="creds">, DNP, MSN, RN</span></p>
+  <p><a href="../../#burn-wizard">Back to all projects</a></p>
+</header>
+
+<main id="content" class="case-study">
+  <h1>Burn Wizard</h1>
+  <p class="lede">
+    A burn assessment trainer for nurses. Map the burn on an age-adjusted body diagram, get the
+    surface area and the fluid plan, and see how each number was reached. It works offline, in
+    English or Spanish.
+  </p>
+
+  <dl class="meta">
+    <dt>Role</dt><dd>Sole developer</dd>
+    <dt>Dates</dt><dd>2024 to present</dd>
+    <dt>Stack</dt><dd>React, TypeScript, Vite, Tauri</dd>
+    <dt>Status</dt><dd>Live on the App Store and web</dd>
+  </dl>
+
+  <figure class="shot browser">
+    <img src="../../img/burn-wizard-desktop.webp" width="1200" height="806"
+         alt="Burn Wizard at desktop width: patient information on the left, the interactive body map with a 15 percent surface area total and fluid rate in the middle, and the fluid management timeline on the right.">
+    <figcaption>
+      The assessment screen at desktop width: patient details, the body map, and the fluid
+      timeline, using the app's built-in pediatric demo scenario. Fictional data.
+    </figcaption>
+  </figure>
+
+  <section aria-labelledby="problem-h">
+    <h2 id="problem-h">The problem</h2>
+    <p>
+      Burn resuscitation runs on two calculations made under pressure: what percentage of the body
+      is burned, and how much fluid that child needs in the first 24 hours. Total body surface area
+      feeds the Parkland formula directly, so an error in surface area carries straight into the
+      fluid volume.
+    </p>
+    <p>
+      Children make it harder. Their body proportions differ from adults' and shift with age, which
+      is why the rule of nines fails in children and the Lund-Browder chart exists. Nurses learn it
+      from a static paper chart and do the arithmetic under time pressure.
+    </p>
+  </section>
+
+  <section aria-labelledby="built-h">
+    <h2 id="built-h">What I built</h2>
+    <p>
+      A trainer that walks through Lund-Browder surface area mapping and Parkland fluid calculation,
+      then checks the result against burn center referral criteria. It runs offline on a phone, with
+      an eight-chapter teaching curriculum. Interface and teaching content are both fully localized
+      to Latin American Spanish (es-419).
+    </p>
+  </section>
+
+  <section aria-labelledby="how-h">
+    <h2 id="how-h">How it works</h2>
+    <p>
+      An offline-first progressive web app, wrapped for iOS. Age-adjusted Lund-Browder tables drive
+      the surface area math, and a teaching engine explains each step rather than returning a bare
+      number.
+    </p>
+    <p>
+      React 19 and TypeScript on Vite, Tailwind for styling, Zustand for state, Workbox for the
+      service worker, and Tauri 2 for the iOS and desktop wrappers. Locally stored session data is
+      encrypted at rest with AES-256-GCM. More than 1,700 automated tests under Vitest and
+      Playwright are weighted toward the calculation paths, because a wrong fluid rate is the kind
+      of error that matters.
+    </p>
+  </section>
+
+  <section aria-labelledby="screens-h">
+    <h2 id="screens-h">Screens</h2>
+    <div class="gallery">
+      <figure class="shot phone">
+        <img src="../../img/burn-wizard-patient.webp" width="560" height="1212"
+             alt="Burn Wizard patient information step on a phone, with age entered in months and weight in kilograms, and a demo mode banner.">
+        <figcaption>Step one: patient details. Age in months drives the Lund-Browder adjustment.</figcaption>
+      </figure>
+      <figure class="shot phone">
+        <img src="../../img/burn-wizard-map.webp" width="560" height="1041"
+             alt="Burn Wizard body map on a phone, showing a child figure with the head, chest, and right upper arm marked as burned.">
+        <figcaption>Step two: the body map. Each region is tapped through 0 to 100 percent involvement.</figcaption>
+      </figure>
+    </div>
+    <p>All screens use the app's built-in demo scenario. No patient data.</p>
+  </section>
+
+  <section aria-labelledby="stands-h">
+    <h2 id="stands-h">Where it stands</h2>
+    <p>
+      Live on the App Store since March 18, 2026, and free on the web; the current version is 1.5.1,
+      published under Martin Apps LLC.
+    </p>
+    <p>
+      It is labeled an educational tool and makes no clinical decision support claim. The app
+      carries that disclaimer in-product, which is a deliberate constraint on what it is allowed to
+      say rather than a legal footnote.
+    </p>
+  </section>
+
+  <section aria-labelledby="links-h">
+    <h2 id="links-h">Links</h2>
+    <ul class="links">
+      <li><a href="https://apps.apple.com/us/app/burn-wizard/id6760600512">Burn Wizard on the App Store</a></li>
+      <li><a href="https://burn-wizard-web.netlify.app/">Burn Wizard on the web</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Perry Martin. Birmingham, Alabama.</p>
+</footer>
+
+</body>
+</html>

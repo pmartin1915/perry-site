@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BoardBound | Perry Martin</title>
+<meta name="description" content="BoardBound Prep: a nurse practitioner board prep app pairing an adaptive question bank with a conversational tutor.">
+<!--
+  Case-study page (SPEC section 13). Static: no script, the shared stylesheet,
+  every word in this file. Every factual claim has a row in CLAIMS.md.
+  House style: no em-dashes, no en-dashes.
+-->
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body>
+
+<a class="skip" href="#content">Skip to content</a>
+
+<header class="identity">
+  <p class="crumb"><a href="../../">Perry Martin</a><span class="creds">, DNP, MSN, RN</span></p>
+  <p><a href="../../#boardbound">Back to all projects</a></p>
+</header>
+
+<main id="content" class="case-study">
+  <h1>BoardBound</h1>
+  <p class="lede">
+    A nurse practitioner board prep app that pairs an adaptive question bank with a conversational
+    tutor you can argue with. Live on the App Store as BoardBound Prep.
+  </p>
+
+  <dl class="meta">
+    <dt>Role</dt><dd>Sole developer</dd>
+    <dt>Stack</dt><dd>React Native, Expo, Supabase</dd>
+    <dt>Status</dt><dd>Live on the App Store as BoardBound Prep</dd>
+  </dl>
+
+  <section aria-labelledby="problem-h">
+    <h2 id="problem-h">The problem</h2>
+    <p>
+      Board prep question banks tell you an answer was wrong. They rarely tell you why your
+      reasoning was wrong, and the reasoning is the part that decides the next question you miss.
+    </p>
+  </section>
+
+  <section aria-labelledby="built-h">
+    <h2 id="built-h">What I built</h2>
+    <p>
+      An adaptive question bank with a tutor that explains the reasoning behind each answer. The app
+      tracks which topics you keep missing, schedules them back on a spaced-repetition interval, and
+      estimates pass probability from your own performance rather than a generic curve.
+    </p>
+  </section>
+
+  <section aria-labelledby="screens-h">
+    <h2 id="screens-h">Screens</h2>
+    <div class="gallery">
+      <figure class="shot phone">
+        <img src="../../img/boardbound-today.webp" width="560" height="1217"
+             alt="BoardBound Prep Today screen showing an estimated readiness of 67 percent and a list of topics to study next.">
+        <figcaption>Today: estimated readiness, and the topics to study next.</figcaption>
+      </figure>
+      <figure class="shot phone">
+        <img src="../../img/boardbound-rationale.webp" width="560" height="1217"
+             alt="BoardBound Prep practice question on thyroid storm treatment, with the correct answer marked and the rationale below it.">
+        <figcaption>Practice: the answer, then the rationale for it.</figcaption>
+      </figure>
+      <figure class="shot phone">
+        <img src="../../img/boardbound-stats.webp" width="560" height="1217"
+             alt="BoardBound Prep statistics screen showing readiness over time and a breakdown of performance by exam domain.">
+        <figcaption>Stats: readiness over time and performance by exam domain.</figcaption>
+      </figure>
+    </div>
+    <p>App Store screenshots.</p>
+  </section>
+
+  <section aria-labelledby="how-h">
+    <h2 id="how-h">How it works</h2>
+    <p>
+      React Native on Expo with Supabase behind it, and a large language model driving the tutor.
+      The adaptive engine weights re-drills toward repeated misses, which is the study method I use
+      myself: master the questions, then teach them back.
+    </p>
+  </section>
+
+  <section aria-labelledby="stands-h">
+    <h2 id="stands-h">Where it stands</h2>
+    <p>
+      Live on the App Store as <strong>BoardBound Prep</strong> since June 2026; the current version
+      is 1.0.4.
+    </p>
+  </section>
+
+  <section aria-labelledby="links-h">
+    <h2 id="links-h">Links</h2>
+    <ul class="links">
+      <li><a href="https://apps.apple.com/us/app/boardbound-prep/id6761675393">BoardBound Prep on the App Store</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Perry Martin. Birmingham, Alabama.</p>
+</footer>
+
+</body>
+</html>

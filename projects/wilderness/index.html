@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wilderness Survival | Perry Martin</title>
+<meta name="description" content="Wilderness Survival Companion: an offline-first survival reference drawn from US Army FM 21-76 and federal sources, with field tools.">
+<!--
+  Case-study page (SPEC section 13). Static: no script, the shared stylesheet,
+  every word in this file. Every factual claim has a row in CLAIMS.md.
+  House style: no em-dashes, no en-dashes.
+-->
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body>
+
+<a class="skip" href="#content">Skip to content</a>
+
+<header class="identity">
+  <p class="crumb"><a href="../../">Perry Martin</a><span class="creds">, DNP, MSN, RN</span></p>
+  <p><a href="../../#wilderness">Back to all projects</a></p>
+</header>
+
+<main id="content" class="case-study">
+  <h1>Wilderness Survival</h1>
+  <p class="lede">
+    An offline-first survival reference and set of field tools. The whole corpus ships inside the
+    app, so nothing in it needs a connection. Live on the App Store as Wilderness Survival Companion.
+  </p>
+
+  <dl class="meta">
+    <dt>Role</dt><dd>Sole developer</dd>
+    <dt>Dates</dt><dd>2024 to present</dd>
+    <dt>Stack</dt><dd>React, TypeScript, Vite, Tauri</dd>
+    <dt>Status</dt><dd>Live on the App Store</dd>
+  </dl>
+
+  <section aria-labelledby="problem-h">
+    <h2 id="problem-h">The problem</h2>
+    <p>
+      Wilderness reference information is worth the least at exactly the moment you need it most,
+      because that is usually somewhere with no signal.
+    </p>
+  </section>
+
+  <section aria-labelledby="built-h">
+    <h2 id="built-h">What I built</h2>
+    <p>
+      A survival reference drawn from US Army FM 21-76 and federal sources including CDC, EPA, NOAA,
+      and the National Weather Service, with environmental calculators and plant identification.
+      Emergency protocols sit on the home screen, one tap away.
+    </p>
+  </section>
+
+  <section aria-labelledby="screens-h">
+    <h2 id="screens-h">Screens</h2>
+    <div class="gallery">
+      <figure class="shot phone">
+        <img src="../../img/wilderness-home.webp" width="560" height="1212"
+             alt="Wilderness Survival home screen with a search box and two emergency protocols: control massive bleeding and treating shock.">
+        <figcaption>Home: search, and the immediate-action protocols.</figcaption>
+      </figure>
+      <figure class="shot phone">
+        <img src="../../img/wilderness-library.webp" width="560" height="1212"
+             alt="Wilderness Survival reference library listing categories including crisis mode, first aid, water, and shelter and fire, each with an entry count.">
+        <figcaption>Library: the reference corpus by category.</figcaption>
+      </figure>
+      <figure class="shot phone">
+        <img src="../../img/wilderness-tools.webp" width="560" height="1212"
+             alt="Wilderness Survival tools screen listing a compass and waypoint tool, a triage engine, water purification, and weather safety.">
+        <figcaption>Tools: calculators and field aids.</figcaption>
+      </figure>
+    </div>
+    <p>Captured from the web build.</p>
+  </section>
+
+  <section aria-labelledby="how-h">
+    <h2 id="how-h">How it works</h2>
+    <p>
+      React and TypeScript as a progressive web app, with the reference content stored in IndexedDB
+      behind a Workbox service worker, wrapped for iOS. The content is sourced and attributed rather
+      than written by me, because survival guidance is not a place to improvise.
+    </p>
+  </section>
+
+  <section aria-labelledby="stands-h">
+    <h2 id="stands-h">Where it stands</h2>
+    <p>
+      Live on the App Store as <strong>Wilderness Survival Companion</strong> since March 2026; the
+      current version is 1.8.0.
+    </p>
+  </section>
+
+  <section aria-labelledby="links-h">
+    <h2 id="links-h">Links</h2>
+    <ul class="links">
+      <li><a href="https://apps.apple.com/us/app/wilderness-survival-companion/id6760920427">Wilderness Survival Companion on the App Store</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>Perry Martin. Birmingham, Alabama.</p>
+</footer>
+
+</body>
+</html>

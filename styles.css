@@ -82,7 +82,8 @@ a:hover { text-decoration-thickness: 2px; }
 /* ---- page frame ---- */
 .identity, main, footer { max-width: 72rem; margin: 0 auto; padding: 0 1rem; }
 .identity { padding-top: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--hairline); }
-.tagline { color: var(--muted); margin-bottom: .75rem; }
+.tagline { color: var(--muted); margin-bottom: .25rem; }
+.standing { color: var(--muted); font-size: .9rem; margin-bottom: .75rem; }
 .actions { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; margin-bottom: .5rem; }
 .contact { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem; list-style: none; margin: 0 0 .75rem; padding: 0; }
 main { padding-top: 1.25rem; padding-bottom: 2rem; }
@@ -238,3 +239,44 @@ footer { padding-top: 1rem; padding-bottom: 2rem; color: var(--muted); border-to
   .series, .slice { break-inside: avoid; }
   a { color: #000; }
 }
+
+/* ---- showcase slice and case-study pages (SPEC section 13) ---- */
+.shot { margin: 0 0 1rem; }
+.shot img { display: block; max-width: 100%; height: auto; background: var(--panel); }
+.shot.phone img {
+  width: 240px;
+  border: 7px solid #1f2933;
+  border-radius: 30px;
+  box-shadow: 0 0 0 1px var(--hairline);
+}
+.shot.browser img {
+  border: 1px solid var(--hairline);
+  border-top: 18px solid var(--panel);
+  border-radius: 10px;
+}
+.shot.diagram img { width: 100%; max-width: 720px; border-radius: 14px; }
+.shot figcaption { color: var(--muted); font-size: .9rem; margin-top: .5rem; max-width: 60ch; }
+.cta {
+  display: inline-block;
+  padding: .55rem .95rem;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.cta:hover { background: var(--accent); color: var(--accent-ink); }
+.viewer-mode .slice .shot { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; align-items: flex-end; }
+.viewer-mode .slice .shot img { max-height: 40vh; width: auto; }
+.viewer-mode .slice .shot.phone img { width: auto; }
+
+.crumb { margin: 0 0 .25rem; color: var(--muted); }
+.crumb a { font-weight: 600; }
+.case-study h1 { margin-top: .25rem; }
+.lede { font-size: 1.15rem; color: var(--ink); max-width: 62ch; }
+.case-study > section { padding: 1.25rem 0; border-top: 1px solid var(--hairline); }
+.case-study .meta { margin-bottom: 1.25rem; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); gap: 1.5rem; }
+.gallery.wide { grid-template-columns: minmax(0, 1fr); }
+.links { padding-left: 1.1rem; }
+.links li { margin-bottom: .35rem; }
+@media print { .shot.phone img { border-width: 2px; box-shadow: none; } }

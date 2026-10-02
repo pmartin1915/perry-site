@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>budget-dispatcher | Perry Martin</title>
+<meta name="description" content="budget-dispatcher: a task runner that turns unused automated coding capacity into bounded, reversible work, with a fail-closed gate on clinical logic.">
+<!--
+  Case-study page (SPEC section 13). Static: no script, the shared stylesheet,
+  every word in this file. Every factual claim has a row in CLAIMS.md.
+  The repository is private, so this page carries no source link.
+  House style: no em-dashes, no en-dashes.
+-->
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body>
+
+<a class="skip" href="#content">Skip to content</a>
+
+<header class="identity">
+  <p class="crumb"><a href="../../">Perry Martin</a><span class="creds">, DNP, MSN, RN</span></p>
+  <p><a href="../../#budget-dispatcher">Back to all projects</a></p>
+</header>
+
+<main id="content" class="case-study">
+  <h1>budget-dispatcher</h1>
+  <p class="lede">
+    A task runner that turns unused automated coding capacity into bounded, reversible,
+    pre-approved work, with a gate that will not let an unreviewed change to clinical logic land.
+  </p>
+
+  <dl class="meta">
+    <dt>Role</dt><dd>Author</dd>
+    <dt>Stack</dt><dd>Node.js</dd>
+    <dt>Status</dt><dd>In daily use; source private</dd>
+  </dl>
+
+  <section aria-labelledby="problem-h">
+    <h2 id="problem-h">The problem</h2>
+    <p>
+      I had automated coding capacity going unused overnight, and no safe way to point it at real
+      work without risking the parts of my projects that should never change unattended. Clinical
+      calculation code is the obvious example.
+    </p>
+  </section>
+
+  <section aria-labelledby="built-h">
+    <h2 id="built-h">What I built</h2>
+    <p>
+      A scheduled runner that works across several of my projects. Its distinguishing feature is a
+      safety gate: any automated change touching clinical domain logic gets an independent review
+      from a different model family before it can land, and a critical finding reverts the commit
+      rather than warning about it.
+    </p>
+  </section>
+
+  <section aria-labelledby="how-h">
+    <h2 id="how-h">How it works</h2>
+    <figure class="shot diagram">
+      <img src="../../img/budget-dispatcher-flow.svg" width="720" height="560"
+           alt="Flow diagram of one budget-dispatcher run: idle and capacity checks, a pre-approved task, a committed change, and a clinical gate that sends flagged changes to a cross-family review, where a critical finding reverts the commit.">
+      <figcaption>One scheduled run, simplified. The orange path is the clinical gate.</figcaption>
+    </figure>
+    <p>
+      Node.js running a phased pipeline on a schedule. A run first checks that the machine is idle
+      and that unused capacity remains, then picks a pre-approved task. Projects are flagged for
+      clinical gating individually, and a flagged project routes any change under its domain or data
+      directories to a cross-family review step.
+    </p>
+    <p>
+      The gate fails closed: a critical finding reverts the commit and logs the outcome, rather
+      than leaving a warning for someone to notice later.
+    </p>
+  </section>
+
+  <section aria-labelledby="stands-h">
+    <h2 id="stands-h">Where it stands</h2>
+    <p>
+      In daily use across my own projects. The source is private.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <p>Perry Martin. Birmingham, Alabama.</p>
+</footer>
+
+</body>
+</html>

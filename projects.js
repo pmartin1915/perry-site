@@ -61,8 +61,8 @@ window.PROFILE = {
  * ------------------------------------------------------------------------- */
 
 window.SCHEMAS = {
-  build: ["The problem", "What I built", "How it works", "Where it stands"],
-  scholarship: ["The question", "What I did", "Method", "Where it stands"],
+  build: ["The problem", "What I built", "How it works", "Where it stands", "Showcase"],
+  scholarship: ["The question", "What I did", "Method", "Where it stands", "Showcase"],
 };
 
 /* ---------------------------------------------------------------------------

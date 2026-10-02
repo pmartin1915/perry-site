@@ -42,6 +42,7 @@
 <header class="identity">
   <h1>Perry Martin<span class="creds">, DNP, MSN, RN</span></h1>
   <p class="tagline">DNP-prepared nurse. I build clinical measurement tools.</p>
+  <p class="standing">Passed the AANPCB Family Nurse Practitioner board exam, September 2026. Alabama licensure in process.</p>
 
   <!--
     Visible at every depth and in the document view. Never gated behind the viewer.
@@ -64,11 +65,11 @@
 <section class="intro" aria-labelledby="intro-h">
   <h2 id="intro-h">Who I am</h2>
   <p>
-    I am a DNP-prepared nurse and a self-taught software engineer. Three and a half years of
-    pediatric critical care and burn nursing at Children's of Alabama showed me how much clinical
-    work runs on tools that do not exist yet, so I started building them. Now most of my attention is
-    on medical imaging: measuring pediatric brain tumors the same way every time, so the decision to
-    treat a child rests on something steadier than a hand-drawn line.
+    I am a DNP-prepared nurse and a self-taught software engineer. In three and a half years as a
+    pediatric critical care and burn nurse at Children's of Alabama, I kept running into problems
+    that no existing tool solved well, so I started building the tools myself. One current project
+    is in medical imaging: software to help measure pediatric brain tumors consistently from one
+    scan to the next, built to support the radiologists and clinicians who track them.
   </p>
 </section>
 
@@ -121,6 +122,18 @@
       measurement agreement is the gap the segmentation study was designed around, which is why these
       two sit next to each other.
     </p>
+  </article>
+  <article class="slice">
+    <h3>Showcase</h3>
+    <figure class="shot diagram">
+      <img src="img/scoping-review-prisma.svg" width="720" height="600" loading="lazy"
+           alt="PRISMA flow diagram: 227 database records, 96 after duplicates were removed, 35 assessed in full text, and 28 studies included.">
+      <figcaption>PRISMA flow: 227 database records, 96 screened after duplicates were removed, 35 read in full, 28 included.</figcaption>
+    </figure>
+    <p data-depth="2">
+      How 227 database records narrowed to the 28 studies the review charts. The case study walks through the question, the search, and why the missing reliability reporting matters for measurement.
+    </p>
+    <p><a class="cta" href="projects/scoping-review/">Read the full case study</a></p>
   </article>
 </section>
 
@@ -211,6 +224,18 @@
       than a legal footnote.
     </p>
   </article>
+  <article class="slice">
+    <h3>Showcase</h3>
+    <figure class="shot phone">
+      <img src="img/burn-wizard-map.webp" width="560" height="1041" loading="lazy"
+           alt="Burn Wizard body map on a phone, showing a child figure with the head, chest, and right upper arm marked as burned.">
+      <figcaption>The body map, loaded with the app's built-in pediatric demo scenario. Fictional data.</figcaption>
+    </figure>
+    <p data-depth="2">
+      Each body region is tapped through 0 to 100 percent involvement, and the surface area total and fluid rate update from age-adjusted tables. The case study walks from patient details to the 24-hour fluid timeline.
+    </p>
+    <p><a class="cta" href="projects/burn-wizard/">Read the full case study</a></p>
+  </article>
 </section>
 
 
@@ -260,6 +285,18 @@
       is 1.0.4.
     </p>
   </article>
+  <article class="slice">
+    <h3>Showcase</h3>
+    <figure class="shot phone">
+      <img src="img/boardbound-today.webp" width="560" height="1217" loading="lazy"
+           alt="BoardBound Prep Today screen showing an estimated readiness of 67 percent and a list of topics to study next.">
+      <figcaption>The Today screen: estimated readiness and what to study next. App Store screenshot.</figcaption>
+    </figure>
+    <p data-depth="2">
+      The home screen turns your own answer history into a readiness estimate and a short list of what to study next. The case study shows the rationale and statistics screens.
+    </p>
+    <p><a class="cta" href="projects/boardbound/">Read the full case study</a></p>
+  </article>
 </section>
 
 
@@ -306,6 +343,18 @@
       Live on the App Store as <strong>Wilderness Survival Companion</strong> since March 2026; the
       current version is 1.8.0.
     </p>
+  </article>
+  <article class="slice">
+    <h3>Showcase</h3>
+    <figure class="shot phone">
+      <img src="img/wilderness-home.webp" width="560" height="1212" loading="lazy"
+           alt="Wilderness Survival home screen with a search box and two emergency protocols: control massive bleeding and treating shock.">
+      <figcaption>The home screen, with emergency protocols one tap away. Web build.</figcaption>
+    </figure>
+    <p data-depth="2">
+      Emergency protocols sit on the home screen, and the reference library and field tools are a tap away, with no connection needed. The case study shows the library and tools.
+    </p>
+    <p><a class="cta" href="projects/wilderness/">Read the full case study</a></p>
   </article>
 </section>
 
@@ -356,6 +405,18 @@
     <p data-depth="2">
       In daily use across my own projects. The source is private.
     </p>
+  </article>
+  <article class="slice">
+    <h3>Showcase</h3>
+    <figure class="shot diagram">
+      <img src="img/budget-dispatcher-flow.svg" width="720" height="560" loading="lazy"
+           alt="Flow diagram of one budget-dispatcher run: idle and capacity checks, a pre-approved task, a committed change, and a clinical gate that sends flagged changes to a cross-family review, where a critical finding reverts the commit.">
+      <figcaption>One scheduled run, simplified. The orange path is the clinical gate.</figcaption>
+    </figure>
+    <p data-depth="2">
+      Every run passes the same checks in the same order, and a change to clinical logic in a flagged project cannot land without a review from a different model family.
+    </p>
+    <p><a class="cta" href="projects/budget-dispatcher/">Read the full case study</a></p>
   </article>
 </section>
 
